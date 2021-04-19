@@ -10,7 +10,7 @@ function Color(name, rgb, hex) {
 function UI() {};
 
 // Get an array of colors from redColors / greenColors / blueColors function 
-Color.prototype.randomColorObject = (rawColorData) => {
+UI.prototype.randomColorObject = (rawColorData) => {
 
     const ColorArray = [];
 
@@ -20,7 +20,7 @@ Color.prototype.randomColorObject = (rawColorData) => {
 };
 
 // Create 12 Color objects and return them in an array
-Color.prototype.createColorObjectArray = (colorObject) => {
+UI.prototype.createColorObjectArray = (colorObject) => {
 
     //const gridSquare = document.getElementsByClassName('grid-sqr');
 
@@ -147,21 +147,18 @@ document.getElementById('button-red').addEventListener('click', (e) => {
    
     e.preventDefault();
 
-    // Instantiate Color constructor
-    const color = new Color();
-
     // Instantiate UI constructor
     const ui = new UI();
 
     // Get random redColor object from raw color data
     // Parameter: redColors()  : Array
     // Return   : Array
-    const randomColorObject = color.randomColorObject(redColors);
+    const rawColorData = ui.randomColorObject(redColors);
 
     // Create 12 Color objects and return them in createColorObjectArray
-    // Parameter: randomColorObject : Array
+    // Parameter: rawColorData : Array
     // Return   : Array
-    const createColorObjectArray = color.createColorObjectArray(randomColorObject);
+    const createColorObjectArray = ui.createColorObjectArray(rawColorData);
 
     // Change background color of the 12 cell grids
     ui.generateColors(createColorObjectArray)
