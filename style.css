@@ -67,6 +67,10 @@ td {
 }
 
 #color-text {
+    display         : flex;
+    justify-content : center;
+    align-items     : center;
+    flex-direction  : column;
     border          : 1px solid purple;
     height          : 90vh;
     width           : 25vw;
@@ -75,10 +79,16 @@ td {
     left            : 5%;
     text-align      : center;
 }
+
 #color-swatch-list {
-    width: 15vw;
-    height: inherit;
-    border: 1px solid blue;
+    width           : 20vw;
+    height          : inherit;
+    font-size       : 1.2rem;
+    padding-top     : 1rem;
+}
+
+.item-list {
+    margin-top      : .5rem;
 }
 
 
